@@ -32,7 +32,7 @@ const dictionary = {
     "Ciernie": "thorns",
     "Przemykanie": "swift_sneak",
     "Głębinowy wędrowiec": "depth_strider",
-    "Mroźny piechur": "frost_Walker",
+    "Mroźny piechur": "frost_walker",
     "Prędkość dusz": "soul_speed",
     "Ostrość": "sharpness",
     "Odporność na ogień": "fire_protection",
