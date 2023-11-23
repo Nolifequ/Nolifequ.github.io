@@ -7,7 +7,7 @@ const dictionary = {
 		"Miotana mikstura odporności na ogień (Długa)": "potionoffireresistance2",
 		"Mikstura niewykonalna": "potion",
 		
-		
+		"Piasek dusz": "soulsand",
 		"Drewniania siekiera": "woodenaxe",
 		"Kamień szlifierski": "grindstone",
 		"Wiaderko wody": "waterbucket",
@@ -331,7 +331,6 @@ const dictionary = {
 "Dynia": "pumpkin",
 "Wykrawana dynia": "carvedpumpkin",
 "Netherrack": "netherrack",
-"Piasek dusz": "soulsand",
 "Gleba dusz": "soulsoil",
 "Bazalt": "basalt",
 "Wypolerowany bazalt": "polishedbasalt",
