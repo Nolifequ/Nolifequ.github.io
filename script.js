@@ -645,7 +645,7 @@ const dictionary = {
 "Łupkowa ceglana płyta": "deepslatebrickslab",
 "Łupkowa kafelkowa płyta": "deepslatetileslab",
 "Rusztowanie": "scaffolding",
-"Sproszkowany redstone": "redstone",
+"Redstone": "redstone",
 "Pochodnia redstone": "redstonetorch",
 "Blok redstone": "redstoneblock",
 "Przekaźnik": "repeater",
