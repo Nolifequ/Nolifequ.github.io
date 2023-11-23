@@ -51,6 +51,7 @@ textarea:focus {
 
 button {
     background-color: #24cf2a;
+    font-weight: bold;
     color: rgb(2, 2, 2);
     padding: 8px 8px;
     display: block;
