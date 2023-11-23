@@ -198,7 +198,7 @@ const dictionary = {
 "Spaczone strzępki": "warpedhyphae",
 "Dębowe liście": "oakleaves",
 "Świerkowe liście": "spruceleaves",
-"Brzozowe liście": "birchleaves",
+"Brzozowe liŚcie": "birchleaves",
 "Tropikalne liście": "jungleleaves",
 "Akacjowe liście": "acacialeaves",
 "Ciemnodębowe liście": "darkoakleaves",
