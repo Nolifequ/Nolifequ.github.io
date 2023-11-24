@@ -6,7 +6,7 @@ const dictionary = {
 		"Mikstura powolnego opadania (Długa)": "potionofslowfalling2",
 		"Miotana mikstura odporności na ogień (Długa)": "potionoffireresistance2",
 		"Mikstura niewykonalna": "potion",
-		
+		"Piaskowiec": "sandstone",
 		"Piasek dusz": "soulsand",
 		"Drewniania siekiera": "woodenaxe",
 		"Kamień szlifierski": "grindstone",
