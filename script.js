@@ -26,6 +26,7 @@ const dictionary = {
     "mikstura szybkości": "potionofspeedii",
     "Powolne opadanie": "feather_falling",
     "Mikstura niewidzialności (Długa)": "potionofinvisibility2",
+    "Miotana mikstura szybkości (Długa)": "splashspeed2pot",
     "Złote jabłko KOX": "enchantedgoldenapple",
     "Oddychanie pod wodą": "respiration",
     "Wydajność pod wodą": "aqua_affinity",
