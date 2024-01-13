@@ -1009,7 +1009,7 @@ const dictionary = {
 "Doniczka": "flowerpot",
 "Marchewka": "carrot",
 "Ziemniak": "potato",
-"Pieczony ziemniak": "bakedpotato",
+"Ugotowany ziemniak": "bakedpotato",
 "Trujący ziemniak": "poisonouspotato",
 "Pusta mapa": "map",
 "Złota marchewka": "goldencarrot",
