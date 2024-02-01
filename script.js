@@ -16,6 +16,7 @@ const dictionary = {
     
     
     "Netherrack(Skała Netheru)": "netherrack",
+    "Mikstura szybkości (Długa)": "potionofspeedlevel2",
     "Miotana mikstura szybkości (Długa)": "splashspeed2pot",
     "Mikstura mistrza żółwi": "potionofturtlemaster2",
     "Świecąca dynia": "jack_o_lantern",
@@ -1090,7 +1091,7 @@ const dictionary = {
 "Zielony sztandar": "greenbanner",
 "Czerwony sztandar": "redbanner",
 "Czarny sztandar": "blackbanner",
-"Kryształ Endu": "endcrystal",
+"Kryształ endu": "endcrystal",
 "Owoc refrenusu": "chorusfruit",
 "Prażony owoc refrenusu": "poppedchorusfruit",
 "Burak": "beetroot",
