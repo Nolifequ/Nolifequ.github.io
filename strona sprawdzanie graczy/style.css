@@ -1,0 +1,324 @@
+body
+{
+	background-color:#1c1b1a;
+	color: white;
+	font-family: 'Encode Sans';
+
+}
+
+p
+{
+	color: #a8aaad;
+	font-size: 20px;
+}
+
+p.punkty
+{
+	color: #a8aaad;
+	font-size: 17px;
+	margin:10px;
+	padding-top:10px;
+}
+
+p.reg
+{
+	color: #a8aaad;
+	font-size: 14px;
+	margin-left:100px;
+	margin-right: 100px;
+	padding-top:10px;
+}
+
+
+a.link
+{
+	color: #FFD700;
+	text-decoration: none;
+}
+h2
+{
+	color: #a8aaad;
+	padding-top:20px;
+}
+
+h3
+{
+	color: #a8aaad;
+}
+
+ul {
+  list-style-type: square;
+  list-style-position: outside;
+  list-style-image: none;
+}
+
+.header
+{
+	background-image: url("header.png");
+	
+    background-position-y: -90px;
+	float: left;
+	width: 100%;
+	height: 150px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.calosc
+{
+	width: 1250px;
+	height: 1750px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 200px;
+	background-color: #0f0e0c;
+	-webkit-box-shadow: 0px 0px 5px 2px rgba(184, 37, 37, 1);
+-moz-box-shadow: 0px 0px 5px 2px rgba(184, 37, 37, 1);
+box-shadow: 0px 0px 5px 2px rgba(184, 37, 37, 1);
+}
+
+.info
+{
+	margin-left: auto;
+    margin-right: auto;
+	width:625px;
+	height:200px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 5px 2px rgba(184, 37, 37, 1);
+-moz-box-shadow: 0px 0px 5px 2px rgba(184, 37, 37, 1);
+box-shadow: 0px 0px 5px 2px rgba(184, 37, 37, 1);
+}
+
+.info2
+{
+	margin-left: auto;
+    margin-right: auto;
+	width:800px;
+	height:250px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 5px 2px rgba(184, 37, 37, 1);
+-moz-box-shadow: 0px 0px 5px 2px rgba(184, 37, 37, 1);
+box-shadow: 0px 0px 5px 2px rgba(184, 37, 37, 1);
+}
+
+.wpisywanie
+{
+	padding-top:20px;
+	width: 480px;
+	height: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	
+}
+
+.wpisywanie2
+{
+	width: 100%;
+	height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.anydesk
+{
+	width: 480px;
+	height: 450px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	
+}
+
+.tekst
+{
+	background-color: #222;
+	margin-left: auto;
+    margin-right: auto;
+	width:625px;
+	height:50px;
+	border-radius: 10px;
+	margin:10px;
+}
+
+.koniec
+{
+	width: 100%;
+	height: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	
+}
+
+.footer
+{
+	margin: 20px;
+	text-align: center;
+	position:relative;
+	color: #b82525;
+
+}
+
+
+input[type=text] 
+	{
+	width: 150px;
+	padding: 10px 20px; 
+	border-radius: 20px;
+	background-color: #b82525;
+	border: none;
+	}
+
+input[type=button], input[type=submit], input[type=reset] 
+{
+	background-color: #b82525;
+	border: none;
+	color: white;
+	padding: 10px 15px;
+	text-decoration: none;
+	margin: 4px;
+	cursor: pointer;
+	border-radius: 10px;
+	line-height: 1mm;
+	-webkit-box-shadow: 0px 0px 3px 2px rgba(184, 37, 37, 1);
+-moz-box-shadow: 0px 0px 3px 2px rgba(184, 37, 37, 1);
+box-shadow: 0px 0px 3px 2px rgba(184, 37, 37, 1);
+}
+
+
+input:hover[type=button], input[type=submit], input[type=reset]
+{
+	background-color: #611313;
+}
+
+button {
+  background-color: #b82525; 
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: small;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 3px 2px rgba(184, 37, 37, 1);
+-moz-box-shadow: 0px 0px 3px 2px rgba(184, 37, 37, 1);
+box-shadow: 0px 0px 3px 2px rgba(184, 37, 37, 1);
+}
+
+
+button:hover
+{
+	background-color: #611313;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #b82525 #cfcfcf;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #cfcfcf;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #b82525;
+    border-radius: 10px;
+    border: 1px groove #671414;
+  }
+  
+  
+  /* UPIĘKSZANIE SELECTÓW */
+
+.custom-select 
+{
+ 	position: relative;
+	margin: 0 auto;
+  	font-family: 'Encode Sans';
+	width: 200px;
+	margin-bottom: 5px;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+	background-color: #b82525;
+	height: 20px;
+	border-radius: 20px;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+	position: absolute;
+	content: "";
+	top: 17px;
+	right: 10px;
+	width: 0;
+	height: 0;
+	border: 6px solid transparent;
+	border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+  color: #ffffff;
+  font-size: medium;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+	position: absolute;
+	background-color: #b82525;
+	top: 100%;
+	left: 0;
+	right: 0;
+	z-index: 99;
+border-radius: 20px;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide 
+{
+	display: none;
+}
+
+.select-items div:hover, .same-as-selected 
+{
+	background-color: #e32d2d;
+	border-radius: 20px;
+}
+#back-button {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	z-index: 9999;
+	cursor: pointer;
+}
+#bottom-image {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 9999; /* Aby obrazek był na wierzchu */
+}

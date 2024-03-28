@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopiowanie pytań</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3; /* Dodany kolor tła dla strony */
+            position: relative; /* Dodana pozycja względna dla obrazka */
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff; /* Tło kontenera */
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Zapobiega wyciekowi cienia */
+        }
+
+        .question {
+            margin-bottom: 15px; /* Zwiększony odstęp między pytaniami */
+            padding: 10px; /* Dodane wewnętrzne marginesy dla pytań */
+            border-radius: 6px; /* Zaokrąglenie narożników dla pytań */
+            background-color: #f9f9f9; /* Tło pytań */
+            border: 1px solid #ddd; /* Dodany lekki obramowanie dla pytań */
+        }
+        
+        .copy-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 12px;
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition-duration: 0.4s;
+            outline: none;
+        }
+
+        .copy-button:hover {
+            background-color: #45a049;
+        }
+
+        .copied {
+            background-color: #f44336 !important;
+        }
+
+        /* Styl dla obrazka */
+        #bottom-image {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 9999; /* Aby obrazek był na wierzchu */
+        }
+
+        /* Styl dla przycisku cofającego się */
+        #back-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 9999;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Przycisk cofający się jako obrazek -->
+    <img id="back-button" src="png//back-arrow.png" alt="Cofnij" onclick="goBack()" width="64" height="64">
+    
+    <div class="container" id="questionsContainer"></div>
+    <script src="js//pytania.js"></script>
+
+    <!-- Obrazek -->
+    <img id="bottom-image" src="png//xxx.png" alt="Bottom Image">
+</body>
+</html>

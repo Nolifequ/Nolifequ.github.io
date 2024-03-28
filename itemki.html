@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Encode%20Sans:300,400,500,600,700" rel="stylesheet" referrerpolicy="origin">
+    <meta charset="utf-8">
+    <title>Nowy test</title>
+    <link rel="stylesheet" href="css//itemki.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="back-button">
+            <img id="back-button" src="png//back-arrow.png" alt="Cofnij" onclick="goBack()" width="64" height="64">
+        </div>
+    <div class="header">
+        <a href="https://realcraft.pl/" target="_blank" class="link">
+            <center><img src="png//logo.png" width="150" height="150"></center>
+        </a>
+    </div>
+    
+<center><div class="calosc">
+        <center><img src="png//Nolifequ.png" width="150" height="150"></center>
+        <h1>Wyciąganie itemków z wiadomości</h1>
+        <label for="inputText">Wklej wiadomość poniżej:</label>
+        <br>
+        <textarea id="inputText" rows="5" cols="40" style="background-color: #0f0e0c; color: white;"></textarea>
+        <br>
+        <button onclick="extractInfo()">Wyciągnij informacje</button>
+        <br>
+        <p>Ilość znalezionych itemków: <span id="itemCount">0</span></p>
+        <div id="outputText" style="background-color: #0f0e0c; color: white; height: 300px; overflow: auto;"></div>
+    </div>
+    
+    <script>
+        function extractInfo() {
+            var message = document.getElementById("inputText").value;
+            var pattern = /\[([^\]]+)\]/g;
+            var matches = message.match(pattern);
+
+            // Sortowanie informacji z Ench: na samej górze
+            matches.sort(function(a, b) {
+                return (a.indexOf("Ench:") === -1) - (b.indexOf("Ench:") === -1) || a.localeCompare(b);
+            });
+
+            var outputText = document.getElementById("outputText");
+            var itemCount = document.getElementById("itemCount");
+            itemCount.textContent = matches.length; // Ustawiamy ilość znalezionych itemów
+
+            // Tworzenie obiektu do zliczania ilości wystąpień wiadomości
+            var countMap = {};
+            for (var i = 0; i < matches.length; i++) {
+                var item = matches[i];
+                if (countMap[item]) {
+                    countMap[item]++;
+                } else {
+                    countMap[item] = 1;
+                }
+            }
+
+            // Tworzenie listy wyników z checkboxami i zastosowaniem stackowania
+            var resultHTML = '';
+            for (var item in countMap) {
+                if (countMap[item] > 1) {
+                    resultHTML += '<label><input type="checkbox" class="red-x">[' + item + ' x' + countMap[item] + ']</label><br>';
+                } else {
+                    resultHTML += '<label><input type="checkbox">' + item + '</label><br>';
+                }
+            }
+            outputText.innerHTML = resultHTML;
+        }
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+<img id="bottom-image" src="png//xxx.png" alt="Bottom Image">
+
+</html></center>

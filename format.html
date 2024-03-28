@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zmiana formatu pytań</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f3f3f3; /* Kolor tła dla strony */
+    }
+
+    #container {
+        max-width: 1000px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff; /* Tło kontenera */
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden; /* Zapobiega wyciekowi cienia */
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        margin-bottom: 15px;
+    }
+
+    textarea {
+        width: 98%;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+    }
+
+    button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition-duration: 0.4s;
+    }
+
+    button:hover {
+        background-color: #45a049;
+        
+    }
+
+    #wynik {
+        margin-top: 20px;
+        white-space: pre-wrap; /* Zapobiega przewijaniu poziomemu */
+    
+    }
+
+    #bottom-image {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 9999; /* Aby obrazek był na wierzchu */
+    }
+
+    #back-button {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 9999;
+    }
+
+    /* Styl dla przycisku cofającego się */
+    #back-button {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 9999;
+        cursor: pointer;
+    }
+    
+</style>
+</head>
+<body>
+<div id="container">
+    <div id="back-button">
+        <img id="back-button" src="png//back-arrow.png" alt="Cofnij" onclick="goBack()" width="64" height="64">
+    </div>
+    <center><h3>"Czy w minecraft są pszczoły?": 'TAK', --> "Czy w minecraft są pszczoły?",</h3></center>
+    <textarea id="tekst" rows="5" placeholder="Wprowadź pytania..."></textarea>
+    <center><button onclick="zmienFormatPytan()">Zmień Format</button></center>
+    <br><br>
+    <pre id="wynik"></pre>
+</div>
+
+<script>
+    function zmienFormatPytan() {
+        var tekst = document.getElementById("tekst").value;
+        var linie = tekst.split("\n");
+        var nowyTekst = "";
+        
+        for (var i = 0; i < linie.length; i++) {
+            if (linie[i].trim() !== "") {
+                var pytanie = linie[i].split(":")[0].trim();
+                pytanie = pytanie.replace(/^"|"$/g, '');
+                nowyTekst += '"' + pytanie + '",\n';
+            }
+        }
+        
+        document.getElementById("wynik").textContent = nowyTekst;
+    }
+
+    function goBack() {
+        window.history.back();
+    }
+</script>
+<img id="bottom-image" src="png//xxx.png" alt="Bottom Image">
+</body>
+</html>

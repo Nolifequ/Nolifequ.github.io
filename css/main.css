@@ -1,0 +1,273 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dancing Script', cursive;
+    background: linear-gradient(to bottom, #10d110, #ff8800cb); 
+    color: #fff;
+}
+
+
+.container {
+    max-width: 1115px;
+    margin: 80px auto;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 45px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    border-radius: 30px;
+    transition: box-shadow 0.8s ease;
+}
+
+.container:hover {
+    box-shadow: 0 0 35px rgba(0, 0, 0, 1.5);
+}
+
+.header-image {
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.925);
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 30px;
+}
+
+textarea {
+    width: 100%;
+    margin-bottom: 25px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px solid #000000;
+    border-radius: 5px;
+    padding: 5px;
+    transition: border-color 0.5s ease;
+}
+
+textarea:focus {
+    border-color: #4CAF50;
+}
+
+button {
+    background-color: #24cf2a;
+    font-weight: bold;
+    color: rgb(2, 2, 2);
+    padding: 8px 8px;
+    display: block;
+	border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.6s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+button.copy {
+    background-color: #24cf2a;
+}
+
+
+
+
+body {
+    background-color: rgb(236, 7, 7);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #000000;
+}
+
+
+button:hover {
+    background-color: #24cf2aa2;
+}
+
+button.clicked {
+    background-color: #808080 !important; 
+    color: white;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+div {
+    margin-bottom: 15px;
+}
+
+
+
+button.copy:hover {
+    transform: scale(1.1);
+    transition: background-color 0.5s ease, transform 0.6s ease;
+}
+
+.image-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9999; /* Aby obrazek był na wierzchu */
+}
+
+
+
+
+#generateButton {
+      padding: 0.6em 2em;
+      font-weight: bold;
+      border: none;
+      outline: none;
+      color: rgb(0, 0, 0);
+      background: #d60808;
+      cursor: pointer;
+      position: relative;
+      z-index: 0;
+      border-radius: 10px;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+    
+    #generateButton:before {
+      content: "";
+      background: linear-gradient(
+        45deg,
+        #ff0000,
+        #ff7300,
+        #fffb00,
+        #48ff00,
+        #00ffd5,
+        #002bff,
+        #7a00ff,
+        #ff00c8,
+        #ff0000
+      );
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      background-size: 400%;
+      z-index: -1;
+      filter: blur(5px);
+      -webkit-filter: blur(5px);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      animation: glowing-button-85 20s linear infinite;
+      transition: opacity 0.3s ease-in-out;
+      border-radius: 10px;
+    }
+    
+    @keyframes glowing-button-85 {
+      0% {
+        background-position: 0 0;
+      }
+      50% {
+        background-position: 400% 0;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
+    
+    #generateButton:after {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgb(37, 233, 11);
+      left: 0;
+      top: 0;
+      border-radius: 10px;
+    }
+
+/* Styl dla menu */
+.dropdown-menu {
+    position: relative;
+    display: inline-block;
+}
+
+/* Styl dla przycisku rozwijającego menu */
+.dropdown-toggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* Styl ikony menu */
+.dropdown-toggle img {
+    width: 45px; /* Dostosowanie szerokości ikony */
+}
+
+/* Styl dla listy rozwijanego menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 270px;
+    z-index: 1;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ddd;
+    border-radius: 5px; /* Zaokrąglenie rogów */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Dodanie cienia */
+    overflow: hidden; /* Ukryj zawijającą się zawartość */
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform-origin: top;
+    transform: scaleY(0);
+}
+
+/* Styl dla elementów listy rozwijanego menu */
+.dropdown-content li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Linia oddzielająca elementy */
+    transition: background-color 0.3s ease; /* Płynne przejście koloru */
+}
+
+/* Styl dla linków w rozwijanym menu */
+.dropdown-content li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Płynne przejście koloru */
+}
+
+/* Styl po najechaniu na element listy */
+.dropdown-content li:hover {
+    background-color: #f0f0f0; /* Płynna zmiana koloru tła */
+}
+
+/* Styl po najechaniu na link w rozwijanym menu */
+.dropdown-content li a:hover {
+    color: #555; /* Płynna zmiana koloru tekstu */
+}
+
+/* Pokazanie listy rozwijanego menu po najechaniu na przycisk */
+.dropdown-menu:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+
+
+
+
+
+
+
+
