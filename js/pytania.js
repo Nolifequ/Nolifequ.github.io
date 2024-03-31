@@ -61,7 +61,7 @@ const questions = [
         const div = document.createElement('div');
         div.classList.add('question');
         div.innerHTML = `
-            <button class="copy-button" onclick="copyText('&7[&cPytanie&7] &b${question}', this)">Kopiuj</button>
+            <button class="copy-button" onclick="copyText('&7[&c&lPytanie&7] &b${question}', this)">Kopiuj</button>
             <p>${question}</p>
         `;
         questionsContainer.appendChild(div);
