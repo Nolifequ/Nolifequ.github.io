@@ -51,56 +51,55 @@
 
 <script src="js/main.js"></script>
 <script>
-    const hashedPassword = "f91c4b10e9857ae22cab6cf5b41c79a7c2e88149f4135ed7ebeff27ad487f232"; // xxxo "realcraftx"
+    const hashedPassword = "f91c4b10e9857ae22cab6cf5b41c79a7c2e88149f4135ed7ebeff27ad487f232";
     const loginFormContainer = document.getElementById("loginFormContainer");
     const contentContainer = document.getElementById("contentContainer");
     const categoriesDropdown = document.getElementById("categories");
 
-    // Sprawdzenie, czy użytkownik jest już zalogowany
+
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     if (isLoggedIn === "true") {
         loginFormContainer.style.display = "none";
         contentContainer.style.display = "block";
         categoriesDropdown.style.display = "block";
-        // Resetowanie licznika nieaktywności po każdym ruchu myszą lub naciśnięciu klawisza
+       
         document.addEventListener("mousemove", resetTimer);
         document.addEventListener("keypress", resetTimer);
-        startTimer(); // Uruchomienie odliczania czasu nieaktywności
+        startTimer(); 
     }
 
     document.getElementById("loginForm").addEventListener("submit", function(event) {
         event.preventDefault();
         const enteredPassword = document.getElementById("password").value;
-        sha256(enteredPassword).then(hashedEnteredPassword => { // Zastosowanie funkcji haszującej asynchronicznie
+        sha256(enteredPassword).then(hashedEnteredPassword => { 
             if (hashedEnteredPassword === hashedPassword) {
                 loginFormContainer.style.display = "none";
                 contentContainer.style.display = "block";
                 categoriesDropdown.style.display = "block";
-                localStorage.setItem("isLoggedIn", "true"); // Zapisanie informacji o zalogowaniu
-                startTimer(); // Uruchomienie odliczania czasu nieaktywności po zalogowaniu
+                localStorage.setItem("isLoggedIn", "true");
+                startTimer();
             } else {
                 document.getElementById("loginMessage").textContent = "Nieprawidłowe hasło. Spróbuj ponownie.";
             }
         });
     });
 
-    let timer; // Zmienna przechowująca identyfikator timeout'u
+    let timer; 
 
     function startTimer() {
-        timer = setTimeout(logout, 30000); // Wylogowanie po 5 minutach nieaktywności (300000 ms)
+        timer = setTimeout(logout, 60000); 
     }
 
     function resetTimer() {
-        clearTimeout(timer); // Resetowanie timeout'u
-        startTimer(); // Ponowne uruchomienie odliczania czasu nieaktywności
+        clearTimeout(timer); 
+        startTimer(); 
     }
 
     function logout() {
-        localStorage.removeItem("isLoggedIn"); // Usunięcie informacji o zalogowaniu
-        location.reload(); // Przeładowanie strony
+        localStorage.removeItem("isLoggedIn"); 
+        location.reload(); 
     }
 
-    // Funkcja do haszowania hasła za pomocą SHA-256
     function sha256(plain) {
         const encoder = new TextEncoder();
         const data = encoder.encode(plain);
