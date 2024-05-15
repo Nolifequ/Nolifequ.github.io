@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nolifequ</title>
-    <link rel="stylesheet" href="css//index.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    
 <header>
     <nav class="dropdown-menu">
         <button class="dropdown-toggle">
-            <img src="png//menu.png" alt="Menu Icon">
+            <img src="png/menu.png" alt="Menu Icon">
         </button>
         <ul class="dropdown-content">
             <li><a href="przetwarzanie_wiadomosci.html">Przetworzenie pytań na OX</a></li>
@@ -22,22 +21,31 @@
         </ul>
     </nav>
 </header>
-    <div class="container">
-        <img src="png//Nolifequ.png" alt="Nolifequ" class="header-image">
-        <link rel="icon" href="png//favicon.ico" type="image/x-icon">
-        <br>
-        <textarea id="message" rows="10" placeholder="Gracz X zabił Y a wypadło z niego: - [Magiczna latarnia x55] - [Diamentowy miecz 99%]"></textarea>
-        <br>
-        <center><button id="generateButton">Generuj komendy</button></center>
-        <br>
-        <br>
-        <div id="results"></div>
-    </div>
-    <img src="png//xxx.png" class="image-container">
-    <script src="js//main.js"></script>  
+<div class="container">
+    <img src="png/Nolifequ.png" alt="Nolifequ" class="header-image">
+    <link rel="icon" href="png/favicon.ico" type="image/x-icon">
+    <br>
+    <form id="loginForm">
+        <label for="password">Hasło:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Zaloguj się</button>
+    </form>
+    <div id="loginMessage"></div>
+</div>
+<img src="png/xxx.png" class="image-container">
+<script src="js/main.js"></script>
+<script>
+    const password = "!x1x";
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const enteredPassword = document.getElementById("password").value;
+        if (enteredPassword === password) {
+            document.getElementById("loginMessage").textContent = "Zalogowano pomyślnie!";
+            // Tutaj możesz przekierować użytkownika do chronionej strony
+        } else {
+            document.getElementById("loginMessage").textContent = "Nieprawidłowe hasło. Spróbuj ponownie.";
+        }
+    });
+</script>
 </body>
 </html>
-
-
-
-
