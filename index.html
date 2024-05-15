@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nolifequ</title>
     <link rel="stylesheet" href="css/index.css">
+    <style>
+        .container {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -21,7 +26,7 @@
         </ul>
     </nav>
 </header>
-<div class="container">
+<div class="login-container">
     <img src="png/Nolifequ.png" alt="Nolifequ" class="header-image">
     <link rel="icon" href="png/favicon.ico" type="image/x-icon">
     <br>
@@ -32,6 +37,17 @@
     </form>
     <div id="loginMessage"></div>
 </div>
+<div class="container">
+    <img src="png/Nolifequ.png" alt="Nolifequ" class="header-image">
+    <link rel="icon" href="png/favicon.ico" type="image/x-icon">
+    <br>
+    <textarea id="message" rows="10" placeholder="Gracz X zabił Y a wypadło z niego: - [Magiczna latarnia x55] - [Diamentowy miecz 99%]"></textarea>
+    <br>
+    <center><button id="generateButton">Generuj komendy</button></center>
+    <br>
+    <br>
+    <div id="results"></div>
+</div>
 <img src="png/xxx.png" class="image-container">
 <script src="js/main.js"></script>
 <script>
@@ -41,7 +57,8 @@
         const enteredPassword = document.getElementById("password").value;
         if (enteredPassword === password) {
             document.getElementById("loginMessage").textContent = "Zalogowano pomyślnie!";
-            // Tutaj możesz przekierować użytkownika do chronionej strony
+            document.querySelector(".login-container").style.display = "none";
+            document.querySelector(".container").style.display = "block";
         } else {
             document.getElementById("loginMessage").textContent = "Nieprawidłowe hasło. Spróbuj ponownie.";
         }
