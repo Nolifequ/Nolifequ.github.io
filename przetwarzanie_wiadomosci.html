@@ -117,6 +117,12 @@ function goBack() {
     window.location.href = "https://nolifequ.github.io/";
 }
     </script>
+    <script>
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (!isLoggedIn) {
+        window.location.href = "index.html"; // Przekierowanie do strony logowania, jeśli użytkownik nie jest zalogowany
+    }
+</script>
 </head>
 <body>
     
