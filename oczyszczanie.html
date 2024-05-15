@@ -53,26 +53,13 @@
 
     button:hover {
         background-color: #45a049;
-        
     }
 
     #wynik {
         margin-top: 20px;
         white-space: pre-wrap; 
-    
     }
 
-    #back-button {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        z-index: 9999; 
-    }
-
-    #back-button img {
-        cursor: pointer;
-    }
-       
     #back-button {
         position: fixed;
         top: 10px;
@@ -81,40 +68,41 @@
         cursor: pointer;
     }
            
-        #bottom-image {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            z-index: 9999; 
-        }
+    #bottom-image {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 9999; 
+        cursor: pointer;
+    }
 
 </style>
 </head>
 <body>
     <div id="container">
-    <div id="back-button">
-        <img id="back-button" src="png//back-arrow.png" alt="Cofnij" onclick="goBack()" width="64" height="64">
+        <div id="back-button">
+            <img src="png/back-arrow.png" alt="Cofnij" onclick="goBack()" width="64" height="64">
+        </div>
+        <center><h3>Wprowadź logi:</h3></center>
+        <textarea id="inputText" rows="6"></textarea>
+        <center><button onclick="usunZnaki()">Usuń znaki</button></center>
+        <div id="wynik"></div>
     </div>
-<div id="container">
-    <center><h3>Wprowadź logi:<h3></center>
-    <textarea id="inputText" rows="6"></textarea>
-    <center><button onclick="usunZnaki()">Usuń znaki</button></center>
-    <div id="wynik"></div>
-</div>
 
-<script>
-    function usunZnaki() {
-        let inputText = document.getElementById('inputText').value;
-        let allowed_polish_uppercase = "HKLWRTNPGMZSĄĆĘŁŃÓŚŻŹ";
-        let cleanedText = inputText.replace(/[§A-Z]/g, function(match) {
-            return allowed_polish_uppercase.includes(match) ? match : '';
-        });
-        document.getElementById('wynik').textContent = cleanedText;
-    }
-    function goBack() {
-    window.history.back();
-    }
-</script>
-<img id="bottom-image" src="png//xxx.png" alt="Bottom Image">
+    <script>
+        function usunZnaki() {
+            let inputText = document.getElementById('inputText').value;
+            let allowed_polish_uppercase = "HKLWRTNPGMZSĄĆĘŁŃÓŚŻŹ";
+            let cleanedText = inputText.replace(/[§A-Z]/g, function(match) {
+                return allowed_polish_uppercase.includes(match) ? match : '';
+            });
+            document.getElementById('wynik').textContent = cleanedText;
+        }
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+    <img id="bottom-image" src="png/xxx.png" alt="Bottom Image">
 </body>
 </html>
