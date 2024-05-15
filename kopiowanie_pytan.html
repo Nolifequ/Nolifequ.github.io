@@ -9,26 +9,26 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f3f3f3; /* Dodany kolor tła dla strony */
-            position: relative; /* Dodana pozycja względna dla obrazka */
+            background-color: #f3f3f3; 
+            position: relative; 
         }
 
         .container {
             max-width: 1000px;
             margin: 20px auto;
             padding: 20px;
-            background-color: #fff; /* Tło kontenera */
+            background-color: #fff; 
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden; /* Zapobiega wyciekowi cienia */
+            overflow: hidden; 
         }
 
         .question {
-            margin-bottom: 15px; /* Zwiększony odstęp między pytaniami */
-            padding: 10px; /* Dodane wewnętrzne marginesy dla pytań */
-            border-radius: 6px; /* Zaokrąglenie narożników dla pytań */
-            background-color: #f9f9f9; /* Tło pytań */
-            border: 1px solid #ddd; /* Dodany lekki obramowanie dla pytań */
+            margin-bottom: 15px; 
+            padding: 10px; 
+            border-radius: 6px; 
+            background-color: #f9f9f9; 
+            border: 1px solid #ddd;
         }
         
         .copy-button {
@@ -54,15 +54,15 @@
             background-color: #f44336 !important;
         }
 
-        /* Styl dla obrazka */
+       
         #bottom-image {
             position: fixed;
             bottom: 0;
             left: 0;
-            z-index: 9999; /* Aby obrazek był na wierzchu */
+            z-index: 9999;
         }
 
-        /* Styl dla przycisku cofającego się */
+      
         #back-button {
             position: fixed;
             top: 10px;
@@ -73,13 +73,13 @@
     </style>
 </head>
 <body>
-    <!-- Przycisk cofający się jako obrazek -->
+    
     <img id="back-button" src="png//back-arrow.png" alt="Cofnij" onclick="goBack()" width="64" height="64">
     
     <div class="container" id="questionsContainer"></div>
     <script src="js//pytania.js"></script>
 
-    <!-- Obrazek -->
+    
     <img id="bottom-image" src="png//xxx.png" alt="Bottom Image">
 </body>
 </html>
