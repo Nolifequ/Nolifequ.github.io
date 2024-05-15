@@ -118,7 +118,7 @@ button.copy:hover {
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: 9999; /* Aby obrazek był na wierzchu */
+    z-index: 9999; 
 }
 
 
@@ -192,13 +192,13 @@ button.copy:hover {
       border-radius: 10px;
     }
 
-/* Styl dla menu */
+
 .dropdown-menu {
     position: relative;
     display: inline-block;
 }
 
-/* Styl dla przycisku rozwijającego menu */
+
 .dropdown-toggle {
     background-color: transparent;
     border: none;
@@ -207,12 +207,12 @@ button.copy:hover {
     transition: background-color 0.3s ease;
 }
 
-/* Styl ikony menu */
+
 .dropdown-toggle img {
-    width: 45px; /* Dostosowanie szerokości ikony */
+    width: 45px; 
 }
 
-/* Styl dla listy rozwijanego menu */
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -223,40 +223,40 @@ button.copy:hover {
     padding: 0;
     margin: 0;
     border: 1px solid #ddd;
-    border-radius: 5px; /* Zaokrąglenie rogów */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Dodanie cienia */
-    overflow: hidden; /* Ukryj zawijającą się zawartość */
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    overflow: hidden; 
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
     transform-origin: top;
     transform: scaleY(0);
 }
 
-/* Styl dla elementów listy rozwijanego menu */
+
 .dropdown-content li {
     padding: 10px;
-    border-bottom: 1px solid #ddd; /* Linia oddzielająca elementy */
-    transition: background-color 0.3s ease; /* Płynne przejście koloru */
+    border-bottom: 1px solid #ddd; 
+    transition: background-color 0.3s ease; 
 }
 
-/* Styl dla linków w rozwijanym menu */
+
 .dropdown-content li a {
     color: #333;
     text-decoration: none;
-    transition: color 0.3s ease; /* Płynne przejście koloru */
+    transition: color 0.3s ease; 
 }
 
-/* Styl po najechaniu na element listy */
+
 .dropdown-content li:hover {
-    background-color: #f0f0f0; /* Płynna zmiana koloru tła */
+    background-color: #f0f0f0;
 }
 
-/* Styl po najechaniu na link w rozwijanym menu */
+
 .dropdown-content li a:hover {
-    color: #555; /* Płynna zmiana koloru tekstu */
+    color: #555; 
 }
 
-/* Pokazanie listy rozwijanego menu po najechaniu na przycisk */
+
 .dropdown-menu:hover .dropdown-content {
     display: block;
     opacity: 1;
