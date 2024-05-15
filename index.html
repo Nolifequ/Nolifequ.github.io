@@ -71,16 +71,17 @@
     document.getElementById("loginForm").addEventListener("submit", function(event) {
         event.preventDefault();
         const enteredPassword = document.getElementById("password").value;
-        const hashedEnteredPassword = sha256(enteredPassword); // Haszowanie wprowadzonego hasła
-        if (hashedEnteredPassword === hashedPassword) {
-            loginFormContainer.style.display = "none";
-            contentContainer.style.display = "block";
-            categoriesDropdown.style.display = "block";
-            localStorage.setItem("isLoggedIn", "true"); // Zapisanie informacji o zalogowaniu
-            startTimer(); // Uruchomienie odliczania czasu nieaktywności po zalogowaniu
-        } else {
-            document.getElementById("loginMessage").textContent = "Nieprawidłowe hasło. Spróbuj ponownie.";
-        }
+        sha256(enteredPassword).then(hashedEnteredPassword => { // Zastosowanie funkcji haszującej asynchronicznie
+            if (hashedEnteredPassword === hashedPassword) {
+                loginFormContainer.style.display = "none";
+                contentContainer.style.display = "block";
+                categoriesDropdown.style.display = "block";
+                localStorage.setItem("isLoggedIn", "true"); // Zapisanie informacji o zalogowaniu
+                startTimer(); // Uruchomienie odliczania czasu nieaktywności po zalogowaniu
+            } else {
+                document.getElementById("loginMessage").textContent = "Nieprawidłowe hasło. Spróbuj ponownie.";
+            }
+        });
     });
 
     let timer; // Zmienna przechowująca identyfikator timeout'u
