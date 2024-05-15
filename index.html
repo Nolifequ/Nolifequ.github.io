@@ -54,6 +54,19 @@
     const password = "!x1x";
     const loginFormContainer = document.getElementById("loginFormContainer");
     const contentContainer = document.getElementById("contentContainer");
+    const categoriesDropdown = document.getElementById("categories");
+
+    // Sprawdzenie, czy użytkownik jest już zalogowany
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (isLoggedIn === "true") {
+        loginFormContainer.style.display = "none";
+        contentContainer.style.display = "block";
+        categoriesDropdown.style.display = "block";
+        // Resetowanie licznika nieaktywności po każdym ruchu myszą lub naciśnięciu klawisza
+        document.addEventListener("mousemove", resetTimer);
+        document.addEventListener("keypress", resetTimer);
+        startTimer(); // Uruchomienie odliczania czasu nieaktywności
+    }
 
     document.getElementById("loginForm").addEventListener("submit", function(event) {
         event.preventDefault();
@@ -61,11 +74,29 @@
         if (enteredPassword === password) {
             loginFormContainer.style.display = "none";
             contentContainer.style.display = "block";
-            document.getElementById("categories").style.display = "block";
+            categoriesDropdown.style.display = "block";
+            localStorage.setItem("isLoggedIn", "true"); // Zapisanie informacji o zalogowaniu
+            startTimer(); // Uruchomienie odliczania czasu nieaktywności po zalogowaniu
         } else {
             document.getElementById("loginMessage").textContent = "Nieprawidłowe hasło. Spróbuj ponownie.";
         }
     });
+
+    let timer; // Zmienna przechowująca identyfikator timeout'u
+
+    function startTimer() {
+        timer = setTimeout(logout, 60000); // Wylogowanie po 5 minutach nieaktywności (300000 ms)
+    }
+
+    function resetTimer() {
+        clearTimeout(timer); // Resetowanie timeout'u
+        startTimer(); // Ponowne uruchomienie odliczania czasu nieaktywności
+    }
+
+    function logout() {
+        localStorage.removeItem("isLoggedIn"); // Usunięcie informacji o zalogowaniu
+        location.reload(); // Przeładowanie strony
+    }
 </script>
 </body>
 </html>
