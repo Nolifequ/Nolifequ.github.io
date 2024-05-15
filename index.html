@@ -8,6 +8,15 @@
 </head>
 <body>
 <header>
+    <h1>Wprowadź hasło, aby uzyskać dostęp do kategorii</h1>
+    <form id="passwordForm">
+        <label for="password">Hasło:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Zaloguj się</button>
+    </form>
+</header>
+
+<div class="categories hidden">
     <nav class="dropdown-menu">
         <button class="dropdown-toggle">
             <img src="png/menu.png" alt="Menu Icon">
@@ -20,7 +29,7 @@
             <li><a href="#" onclick="showCategory('oczyszczanie')">Zamiana logi z HEX</a></li>
         </ul>
     </nav>
-</header>
+</div>
 
 <div id="przetwarzanie_wiadomosci" class="category hidden">
     <h2>Przetworzenie pytań na OX</h2>
@@ -56,6 +65,16 @@
         "itemki": "!x4x4",
         "oczyszczanie": "!x5x5"
     };
+
+    document.getElementById("passwordForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const enteredPassword = document.getElementById("password").value;
+        if (enteredPassword === "!x1x") { // Tutaj wprowadź hasło dla dostępu do kategorii
+            document.querySelector(".categories").classList.remove("hidden");
+        } else {
+            alert("Nieprawidłowe hasło.");
+        }
+    });
 
     function showCategory(category) {
         const password = prompt("Wprowadź hasło dla tej kategorii:");
