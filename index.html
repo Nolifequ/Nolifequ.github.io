@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nolifequ</title>
     <link rel="stylesheet" href="css/index.css">
-    <style>
-        .container {
-            display: none;
-        }
-    </style>
 </head>
 <body>
 <header>
@@ -18,51 +13,58 @@
             <img src="png/menu.png" alt="Menu Icon">
         </button>
         <ul class="dropdown-content">
-            <li><a href="przetwarzanie_wiadomosci.html">Przetworzenie pytań na OX</a></li>
-            <li><a href="kopiowanie_pytan.html">Kopiowanie pytań</a></li>
-            <li><a href="format.html">Format</a></li>
-            <li><a href="itemki.html">Itemki</a></li>
-            <li><a href="oczyszczanie.html">Zamiana logi z HEX</a></li>
+            <li><a href="#" onclick="showCategory('przetwarzanie_wiadomosci')">Przetworzenie pytań na OX</a></li>
+            <li><a href="#" onclick="showCategory('kopiowanie_pytan')">Kopiowanie pytań</a></li>
+            <li><a href="#" onclick="showCategory('format')">Format</a></li>
+            <li><a href="#" onclick="showCategory('itemki')">Itemki</a></li>
+            <li><a href="#" onclick="showCategory('oczyszczanie')">Zamiana logi z HEX</a></li>
         </ul>
     </nav>
 </header>
-<div class="login-container">
-    <img src="png/Nolifequ.png" alt="Nolifequ" class="header-image">
-    <link rel="icon" href="png/favicon.ico" type="image/x-icon">
-    <br>
-    <form id="loginForm">
-        <label for="password">Hasło:</label>
-        <input type="password" id="password" name="password" required>
-        <button type="submit">Zaloguj się</button>
-    </form>
-    <div id="loginMessage"></div>
+
+<div id="przetwarzanie_wiadomosci" class="category hidden">
+    <h2>Przetworzenie pytań na OX</h2>
+    <!-- Zawartość kategorii -->
 </div>
-<div class="container">
-    <img src="png/Nolifequ.png" alt="Nolifequ" class="header-image">
-    <link rel="icon" href="png/favicon.ico" type="image/x-icon">
-    <br>
-    <textarea id="message" rows="10" placeholder="Gracz X zabił Y a wypadło z niego: - [Magiczna latarnia x55] - [Diamentowy miecz 99%]"></textarea>
-    <br>
-    <center><button id="generateButton">Generuj komendy</button></center>
-    <br>
-    <br>
-    <div id="results"></div>
+
+<div id="kopiowanie_pytan" class="category hidden">
+    <h2>Kopiowanie pytań</h2>
+    <!-- Zawartość kategorii -->
 </div>
-<img src="png/xxx.png" class="image-container">
+
+<div id="format" class="category hidden">
+    <h2>Format</h2>
+    <!-- Zawartość kategorii -->
+</div>
+
+<div id="itemki" class="category hidden">
+    <h2>Itemki</h2>
+    <!-- Zawartość kategorii -->
+</div>
+
+<div id="oczyszczanie" class="category hidden">
+    <h2>Zamiana logi z HEX</h2>
+    <!-- Zawartość kategorii -->
+</div>
+
 <script src="js/main.js"></script>
 <script>
-    const password = "!x1x";
-    document.getElementById("loginForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        const enteredPassword = document.getElementById("password").value;
-        if (enteredPassword === password) {
-            document.getElementById("loginMessage").textContent = "Zalogowano pomyślnie!";
-            document.querySelector(".login-container").style.display = "none";
-            document.querySelector(".container").style.display = "block";
+    const categories = {
+        "przetwarzanie_wiadomosci": "!x1x1",
+        "kopiowanie_pytan": "!x2x2",
+        "format": "!x3x3",
+        "itemki": "!x4x4",
+        "oczyszczanie": "!x5x5"
+    };
+
+    function showCategory(category) {
+        const password = prompt("Wprowadź hasło dla tej kategorii:");
+        if (password === categories[category]) {
+            document.getElementById(category).classList.remove("hidden");
         } else {
-            document.getElementById("loginMessage").textContent = "Nieprawidłowe hasło. Spróbuj ponownie.";
+            alert("Nieprawidłowe hasło.");
         }
-    });
+    }
 </script>
 </body>
 </html>
