@@ -3,135 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Przetwarzanie wiadomości</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            color: #333;
-            position: relative; 
-            min-height: 100vh; 
-        }
-        #container {
-            width: 60%;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-        }
-        h1, h2 {
-            text-align: center;
-            color: #333;
-        }
-        textarea {
-            width: 100%;
-            padding: 3px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            resize: vertical;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            display: block;
-            margin: 0 auto;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        #wyniki {
-            margin-top: 20px;
-            white-space: pre-line;
-            overflow-x: auto;
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        #skopiujWyniki {
-            margin-top: 10px;
-            text-align: center;
-        }
-        #bottom-image {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            z-index: 9999; 
-        }
-        #back-button {
-            position: absolute; 
-            top: 10px;
-            left: 10px;
-            z-index: 9999; 
-            cursor: pointer; 
-        }
-        #back-button {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            z-index: 9999;
-            cursor: pointer;
-        }
-    </style>
-    <script>
-        function przetworzWiadomosci() {
-            var wiadomosci = document.getElementById('wiadomosci').value;
-            var linie = wiadomosci.split('\n');
-            var wyniki = '';
-            for (var i = 0; i < linie.length; i++) {
-                var linia = linie[i].trim();
-                if (linia !== '') {
-                    var podzial = linia.split(',');
-                    if (podzial.length === 2) {
-                        var pytanie = podzial[0].trim();
-                        var odpowiedz = podzial[1].trim();
-                        wyniki += '"' + pytanie + '": ' + "'" + odpowiedz.toUpperCase() + "',\n";
-                    } else {
-                        alert("Nieprawidłowy format dla linii: " + linia);
-                        return;
-                    }
-                }
-            }
-            var wynikiDiv = document.getElementById('wyniki');
-            wynikiDiv.innerHTML = wyniki;
-        }
-
-        function skopiujWyniki() {
-            var wynikiDiv = document.getElementById('wyniki');
-            var wynikiTekst = wynikiDiv.innerText; 
-            navigator.clipboard.writeText(wynikiTekst); 
-            alert("Skopiowano wszystkie przetworzone pytania.");
-        }
-
-function goBack() {
-    window.location.href = "https://nolifequ.github.io/";
-}
-    </script>
+    <title>Nolifequ</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    
-    <div id="back-button" onclick="goBack()">
-        <img id="back-button" src="png//back-arrow.png" alt="Cofnij" onclick="goBack()" width="64" height="64">
-    </div>
-    <div id="container">
-        <textarea id="wiadomosci" rows="10" placeholder="Wprowadź pytania w formacie: 'Pytanie,tak/nie' Przykład: Czy PWWP to właściciel?,tak"></textarea>
-        <button onclick="przetworzWiadomosci()">Zmień format</button>
-        <div id="wyniki"></div>
-        <div id="skopiujWyniki">
-            <button onclick="skopiujWyniki()">Skopiuj wszystkie pytania</button>
-        </div>
-    </div>
-    
-    <img id="bottom-image" src="png//xxx.png" alt="Bottom Image">
+
+<header>
+    <nav class="dropdown-menu">
+        <button class="dropdown-toggle">
+            <img src="png/menu.png" alt="Menu Icon">
+        </button>
+        <ul class="dropdown-content" id="categories" style="display: none;">
+            <li><a href="przetwarzanie_wiadomosci.html">Przetworzenie pytań na OX</a></li>
+            <li><a href="kopiowanie_pytan.html">Kopiowanie pytań</a></li>
+            <li><a href="format.html">Format</a></li>
+            <li><a href="itemki.html">Itemki</a></li>
+            <li><a href="oczyszczanie.html">Zamiana logi z HEX</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container" id="loginFormContainer">
+    <img src="png/Nolifequ.png" alt="Nolifequ" class="header-image">
+    <link rel="icon" href="png/favicon.ico" type="image/x-icon">
+    <br>
+    <form id="loginForm">
+        <label for="password">Hasło:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Zaloguj się</button>
+    </form>
+    <div id="loginMessage"></div>
+</div>
+
+<div class="container" id="contentContainer" style="display: none;">
+    <img src="png/Nolifequ.png" alt="Nolifequ" class="header-image">
+    <link rel="icon" href="png/favicon.ico" type="image/x-icon">
+    <br>
+    <textarea id="message" rows="10" placeholder="Gracz X zabił Y a wypadło z niego: - [Magiczna latarnia x55] - [Diamentowy miecz 99%]"></textarea>
+    <br>
+    <center><button id="generateButton">Generuj komendy</button></center>
+    <br>
+    <br>
+    <div id="results"></div>
+</div>
+
+<img src="png/xxx.png" class="image-container">
+
+<script src="js/main.js"></script>
+<script>
+    const password = "!x1x";
+    const loginFormContainer = document.getElementById("loginFormContainer");
+    const contentContainer = document.getElementById("contentContainer");
+    const categoriesDropdown = document.getElementById("categories");
+
+    // Sprawdzenie, czy użytkownik jest już zalogowany
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (isLoggedIn === "true") {
+        loginFormContainer.style.display = "none";
+        contentContainer.style.display = "block";
+        categoriesDropdown.style.display = "block";
+        // Resetowanie licznika nieaktywności po każdym ruchu myszą lub naciśnięciu klawisza
+        document.addEventListener("mousemove", resetTimer);
+        document.addEventListener("keypress", resetTimer);
+        startTimer(); // Uruchomienie odliczania czasu nieaktywności
+    }
+
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const enteredPassword = document.getElementById("password").value;
+        if (enteredPassword === password) {
+            loginFormContainer.style.display = "none";
+            contentContainer.style.display = "block";
+            categoriesDropdown.style.display = "block";
+            localStorage.setItem("isLoggedIn", "true"); // Zapisanie informacji o zalogowaniu
+            startTimer(); // Uruchomienie odliczania czasu nieaktywności po zalogowaniu
+        } else {
+            document.getElementById("loginMessage").textContent = "Nieprawidłowe hasło. Spróbuj ponownie.";
+        }
+    });
+
+    let timer; // Zmienna przechowująca identyfikator timeout'u
+
+    function startTimer() {
+        timer = setTimeout(logout, 300000); // Wylogowanie po 5 minutach nieaktywności (300000 ms)
+    }
+
+    function resetTimer() {
+        clearTimeout(timer); // Resetowanie timeout'u
+        startTimer(); // Ponowne uruchomienie odliczania czasu nieaktywności
+    }
+
+    function logout() {
+        localStorage.removeItem("isLoggedIn"); // Usunięcie informacji o zalogowaniu
+        location.reload(); // Przeładowanie strony
+    }
+</script>
 </body>
 </html>
