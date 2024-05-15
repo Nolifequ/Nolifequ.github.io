@@ -51,7 +51,7 @@
 
 <script src="js/main.js"></script>
 <script>
-    const password = "!x1x";
+    const hashedPassword = "4d1ae34875e72b0e03438b7887f1cb87156a126f2ab8d0e0e7b2d5a835537e19"; // Zahaszowane hasło "!x1x"
     const loginFormContainer = document.getElementById("loginFormContainer");
     const contentContainer = document.getElementById("contentContainer");
     const categoriesDropdown = document.getElementById("categories");
@@ -71,7 +71,8 @@
     document.getElementById("loginForm").addEventListener("submit", function(event) {
         event.preventDefault();
         const enteredPassword = document.getElementById("password").value;
-        if (enteredPassword === password) {
+        const hashedEnteredPassword = sha256(enteredPassword); // Haszowanie wprowadzonego hasła
+        if (hashedEnteredPassword === hashedPassword) {
             loginFormContainer.style.display = "none";
             contentContainer.style.display = "block";
             categoriesDropdown.style.display = "block";
@@ -85,7 +86,7 @@
     let timer; // Zmienna przechowująca identyfikator timeout'u
 
     function startTimer() {
-        timer = setTimeout(logout, 60000); // Wylogowanie po 5 minutach nieaktywności (300000 ms)
+        timer = setTimeout(logout, 300000); // Wylogowanie po 5 minutach nieaktywności (300000 ms)
     }
 
     function resetTimer() {
@@ -96,6 +97,21 @@
     function logout() {
         localStorage.removeItem("isLoggedIn"); // Usunięcie informacji o zalogowaniu
         location.reload(); // Przeładowanie strony
+    }
+
+    // Funkcja do haszowania hasła za pomocą SHA-256
+    function sha256(plain) {
+        const encoder = new TextEncoder();
+        const data = encoder.encode(plain);
+        return window.crypto.subtle.digest("SHA-256", data).then(hash => {
+            let hexString = "";
+            const bytes = new Uint8Array(hash);
+            for (let i = 0; i < bytes.length; i++) {
+                const hex = bytes[i].toString(16);
+                hexString += (hex.length === 1 ? "0" : "") + hex;
+            }
+            return hexString;
+        });
     }
 </script>
 </body>
