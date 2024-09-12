@@ -51,68 +51,7 @@
 
 <script src="js/main.js"></script>
 <script>
-    const hashedPassword = "328bd639525a326726ba5b631cf63ecf73900610d678b5d09ec835b4a9a24e3e";
-    const loginFormContainer = document.getElementById("loginFormContainer");
-    const contentContainer = document.getElementById("contentContainer");
-    const categoriesDropdown = document.getElementById("categories");
-
-
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    if (isLoggedIn === "true") {
-        loginFormContainer.style.display = "none";
-        contentContainer.style.display = "block";
-        categoriesDropdown.style.display = "block";
-       
-        document.addEventListener("mousemove", resetTimer);
-        document.addEventListener("keypress", resetTimer);
-        startTimer(); 
-    }
-
-    document.getElementById("loginForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        const enteredPassword = document.getElementById("password").value;
-        sha256(enteredPassword).then(hashedEnteredPassword => { 
-            if (hashedEnteredPassword === hashedPassword) {
-                loginFormContainer.style.display = "none";
-                contentContainer.style.display = "block";
-                categoriesDropdown.style.display = "block";
-                localStorage.setItem("isLoggedIn", "true");
-                startTimer();
-            } else {
-                document.getElementById("loginMessage").textContent = "Nieprawidłowe hasło. Spróbuj ponownie.";
-            }
-        });
-    });
-
-    let timer; 
-
-    function startTimer() {
-        timer = setTimeout(logout, 600000); 
-    }
-
-    function resetTimer() {
-        clearTimeout(timer); 
-        startTimer(); 
-    }
-
-    function logout() {
-        localStorage.removeItem("isLoggedIn"); 
-        location.reload(); 
-    }
-
-    function sha256(plain) {
-        const encoder = new TextEncoder();
-        const data = encoder.encode(plain);
-        return window.crypto.subtle.digest("SHA-256", data).then(hash => {
-            let hexString = "";
-            const bytes = new Uint8Array(hash);
-            for (let i = 0; i < bytes.length; i++) {
-                const hex = bytes[i].toString(16);
-                hexString += (hex.length === 1 ? "0" : "") + hex;
-            }
-            return hexString;
-        });
-    }
+const _0x589cf6=_0x5838;(function(_0x8092b3,_0x69938c){const _0x3008eb=_0x5838,_0x1f4c06=_0x8092b3();while(!![]){try{const _0x24295e=parseInt(_0x3008eb(0x18a))/0x1*(parseInt(_0x3008eb(0x182))/0x2)+-parseInt(_0x3008eb(0x185))/0x3+-parseInt(_0x3008eb(0x189))/0x4+-parseInt(_0x3008eb(0x17a))/0x5*(-parseInt(_0x3008eb(0x165))/0x6)+-parseInt(_0x3008eb(0x172))/0x7+parseInt(_0x3008eb(0x181))/0x8+-parseInt(_0x3008eb(0x173))/0x9;if(_0x24295e===_0x69938c)break;else _0x1f4c06['push'](_0x1f4c06['shift']());}catch(_0x591bbd){_0x1f4c06['push'](_0x1f4c06['shift']());}}}(_0x930d,0x533d0));const hashedPassword=_0x589cf6(0x171),loginFormContainer=document['getElementById'](_0x589cf6(0x180)),contentContainer=document[_0x589cf6(0x170)](_0x589cf6(0x18c)),categoriesDropdown=document['getElementById']('categories'),isLoggedIn=localStorage[_0x589cf6(0x187)](_0x589cf6(0x168));isLoggedIn===_0x589cf6(0x179)&&(loginFormContainer['style'][_0x589cf6(0x178)]=_0x589cf6(0x167),contentContainer['style'][_0x589cf6(0x178)]=_0x589cf6(0x183),categoriesDropdown['style'][_0x589cf6(0x178)]=_0x589cf6(0x183),document[_0x589cf6(0x16d)](_0x589cf6(0x177),resetTimer),document[_0x589cf6(0x16d)](_0x589cf6(0x17d),resetTimer),startTimer());document[_0x589cf6(0x170)](_0x589cf6(0x186))[_0x589cf6(0x16d)](_0x589cf6(0x16e),function(_0x110c43){const _0x5c11ee=_0x589cf6;_0x110c43[_0x5c11ee(0x188)]();const _0x14abc5=document[_0x5c11ee(0x170)](_0x5c11ee(0x17e))[_0x5c11ee(0x16f)];sha256(_0x14abc5)[_0x5c11ee(0x16c)](_0x4ad2c7=>{const _0x3fae83=_0x5c11ee;_0x4ad2c7===hashedPassword?(loginFormContainer['style'][_0x3fae83(0x178)]=_0x3fae83(0x167),contentContainer[_0x3fae83(0x184)][_0x3fae83(0x178)]='block',categoriesDropdown[_0x3fae83(0x184)]['display']=_0x3fae83(0x183),localStorage[_0x3fae83(0x17b)](_0x3fae83(0x168),'true'),startTimer()):document[_0x3fae83(0x170)](_0x3fae83(0x174))[_0x3fae83(0x17f)]=_0x3fae83(0x18b);});});let timer;function _0x5838(_0x3b10a5,_0x5c22bc){const _0x930d6=_0x930d();return _0x5838=function(_0x5838ee,_0xe891ca){_0x5838ee=_0x5838ee-0x165;let _0x3d0349=_0x930d6[_0x5838ee];return _0x3d0349;},_0x5838(_0x3b10a5,_0x5c22bc);}function startTimer(){timer=setTimeout(logout,0x927c0);}function resetTimer(){clearTimeout(timer),startTimer();}function _0x930d(){const _0x40e9ba=['328bd639525a326726ba5b631cf63ecf73900610d678b5d09ec835b4a9a24e3e','1282316aTzGPu','5640246UanRkj','loginMessage','reload','crypto','mousemove','display','true','5sQLIDF','setItem','toString','keypress','password','textContent','loginFormContainer','5195824GabZDZ','4qFFlXk','block','style','600804oYKHHJ','loginForm','getItem','preventDefault','2001204NYTogW','306008JBhvld','Nieprawidłowe\x20hasło.\x20Spróbuj\x20ponownie.','contentContainer','3539406nXuGOL','encode','none','isLoggedIn','length','subtle','removeItem','then','addEventListener','submit','value','getElementById'];_0x930d=function(){return _0x40e9ba;};return _0x930d();}function logout(){const _0x486120=_0x589cf6;localStorage[_0x486120(0x16b)]('isLoggedIn'),location[_0x486120(0x175)]();}function sha256(_0x1da93b){const _0x1ef3d7=_0x589cf6,_0x114c4c=new TextEncoder(),_0x5f1ab7=_0x114c4c[_0x1ef3d7(0x166)](_0x1da93b);return window[_0x1ef3d7(0x176)][_0x1ef3d7(0x16a)]['digest']('SHA-256',_0x5f1ab7)['then'](_0x4403ed=>{const _0x58ded9=_0x1ef3d7;let _0x4ef37e='';const _0x4d225f=new Uint8Array(_0x4403ed);for(let _0x1bd13=0x0;_0x1bd13<_0x4d225f[_0x58ded9(0x169)];_0x1bd13++){const _0x1e4594=_0x4d225f[_0x1bd13][_0x58ded9(0x17c)](0x10);_0x4ef37e+=(_0x1e4594[_0x58ded9(0x169)]===0x1?'0':'')+_0x1e4594;}return _0x4ef37e;});}
 </script>
 </body>
 </html>
